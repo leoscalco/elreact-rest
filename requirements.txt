@@ -8,4 +8,4 @@ psycopg2==2.7.3.2
 pytz==2017.3
 six==1.11.0
 static3==0.7.0
-gdal==1.11.5
+gdal==2.2.2
