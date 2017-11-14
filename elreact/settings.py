@@ -143,6 +143,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
+
 
 # Heroku settings
 if os.getcwd() == '/app':
@@ -151,7 +153,6 @@ if os.getcwd() == '/app':
         'default': dj_database_url.config(default='postgres://localhost')
     }
 
-    GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
