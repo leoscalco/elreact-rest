@@ -158,6 +158,7 @@ if os.getcwd() == '/app':
     DATABASES['default'] =  dj_database_url.config()
     DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
     DATABASES['default']['NAME'] = 'elreactgis'
+    DATABASES['default']['HOST'] = 'localhost'
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
