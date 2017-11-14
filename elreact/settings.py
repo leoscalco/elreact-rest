@@ -109,8 +109,9 @@ DATABASES = {
 # Heroku settings
 if os.getcwd() == '/app':
     import dj_database_url
-    DATABASES['default'] =  dj_database_url.config()
-    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+    DATABASES = {
+        'default': dj_database_url.config(default='postgis://localhost')
+    }
 
     GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
     GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
