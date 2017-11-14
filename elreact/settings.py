@@ -143,9 +143,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-GEOS_LIBRARY_PATH = str(environ.get('GEOS_LIBRARY_PATH'))+"/libgeos_c.so"
-GDAL_LIBRARY_PATH = str(environ.get('GDAL_LIBRARY_PATH'))+"/libgdal.so"
+print environ.get('GEOS_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 
 # Heroku settings
 if os.getcwd() == '/app':
