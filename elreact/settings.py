@@ -148,7 +148,7 @@ STATIC_URL = '/static/'
 if os.getcwd() == '/app':
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgis://localhost')
+        'default': dj_database_url.config(default='postgres://localhost')
     }
 
     # GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
