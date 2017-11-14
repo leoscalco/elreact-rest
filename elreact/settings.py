@@ -98,13 +98,13 @@ WSGI_APPLICATION = 'elreact.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#          'NAME': 'elreact_geo',
-#          'USER': 'geo',
-#     },
-# }
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+         'NAME': 'elreact_geo',
+         'USER': 'geo',
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
