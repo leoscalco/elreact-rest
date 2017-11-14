@@ -144,8 +144,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')+"/libgeos_c.so"
-GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')+"/libgdal.so"
+GEOS_LIBRARY_PATH = str(environ.get('GEOS_LIBRARY_PATH'))+"/libgeos_c.so"
+GDAL_LIBRARY_PATH = str(environ.get('GDAL_LIBRARY_PATH'))+"/libgdal.so"
 
 # Heroku settings
 if os.getcwd() == '/app':
