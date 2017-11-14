@@ -146,6 +146,7 @@ STATIC_URL = '/static/'
 
 GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
 GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
+
 # Heroku settings
 if os.getcwd() == '/app':
     import dj_database_url
