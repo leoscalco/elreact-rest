@@ -6,3 +6,4 @@ djangorestframework-gis==0.12
 gunicorn==19.7.1
 psycopg2>=2.6.1
 static3==0.7.0
+gdal==2.1.0
