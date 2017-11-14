@@ -152,9 +152,11 @@ GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
 # Heroku settings
 if os.getcwd() == '/app':
     import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.config(default='postgis://localhost')
-    }
+    # DATABASES = {
+    #     'default': dj_database_url.config(default='postgis://localhost')
+    # }
+    DATABASES['default'] =  dj_database_url.config()
+    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
