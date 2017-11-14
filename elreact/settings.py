@@ -111,8 +111,8 @@ if os.getcwd() == '/app':
     DATABASES['default'] =  dj_database_url.config()
     DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
-    GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
-    GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
+    GDAL_LIBRARY_PATH = "/app/.heroku/vendor/lib/libgdal.so"
+    GEOS_LIBRARY_PATH = "/app/.heroku/vendor/lib/libgeos_c.so"
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
