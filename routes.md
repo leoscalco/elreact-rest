@@ -378,7 +378,7 @@
     }
 ```
 
-##### paths/
+##### login/
 
 * HTTP methods: POST
   * POST: send a username and password and get success ou fail message.
