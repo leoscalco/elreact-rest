@@ -99,11 +99,11 @@ WSGI_APPLICATION = 'elreact.wsgi.application'
 # }
 
 DATABASES = {
-    # 'default': {
-    #      'ENGINE': 'django.contrib.gis.db.backends.postgis',
-    #      'NAME': 'elreact_geo',
-    #      'USER': 'geo',
-    # },
+    'default': {
+         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+         'NAME': 'elreact_geo',
+         'USER': 'geo',
+    },
 }
 
 # Password validation
@@ -143,17 +143,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-print environ.get('GEOS_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgeos_c.so'
-# GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
-GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
-# GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
+
+
 
 # Heroku settings
 if os.getcwd() == '/app':
+    GEOS_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgeos_c.so'
+    # GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
+    GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
+    # GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgis://localhost')
     }
     # DATABASES['default'] = dj_database_url.config()
     # DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
