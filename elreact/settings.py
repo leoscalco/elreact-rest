@@ -154,9 +154,11 @@ if os.getcwd() == '/app':
     # # GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
     import dj_database_url
 
-    DATABASES = {
-        'default': dj_database_url.config(default='postgis://')
-    }
+    # DATABASES = {
+    #     'default': dj_database_url.config(default='postgis://')
+    # }
+    DATABASES['default'] = dj_database_url.config()
+    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
