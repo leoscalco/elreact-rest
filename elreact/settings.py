@@ -155,15 +155,7 @@ if os.getcwd() == '/app':
     import dj_database_url
 
     DATABASES = {
-        # 'default': dj_database_url.config(default='postgres://')
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'mydatabase',
-            'USER': 'mydatabaseuser',
-            'PASSWORD': 'mypassword',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-        }
+        'default': dj_database_url.config(default='postgres://')
     }
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
