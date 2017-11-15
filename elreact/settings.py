@@ -158,7 +158,8 @@ if os.getcwd() == '/app':
     # }
     DATABASES['default'] = dj_database_url.config()
     DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-    # DATABASES['default']['NAME'] = 'elreact_geo'
+    DATABASES['default']['NAME'] = 'elreact_geo'
+    DATABASES['default']['HOST'] = 'localhost'
     # DATABASES = {
     #     'default': dj_database_url.config(default='postgis://localhost')
     # }
