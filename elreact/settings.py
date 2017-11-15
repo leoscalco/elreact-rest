@@ -155,7 +155,7 @@ if os.getcwd() == '/app':
     import dj_database_url
 
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://')
+        'default': dj_database_url.config(default='postgis://')
     }
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
