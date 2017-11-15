@@ -154,7 +154,7 @@ if os.getcwd() == '/app':
     # # GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgis://localhost')
+        'default': dj_database_url.config(default='postgres://localhost')
     }
     # DATABASES['default'] = dj_database_url.config()
     # DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
