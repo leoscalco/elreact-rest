@@ -153,7 +153,6 @@ if os.getcwd() == '/app':
     GDAL_LIBRARY_PATH = '/app/.heroku/vendor/lib/libgdal.so'
     # GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
     import dj_database_url
-
     DATABASES = {
         'default': dj_database_url.config(default='postgis://localhost')
     }
