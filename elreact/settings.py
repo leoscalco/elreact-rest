@@ -155,19 +155,16 @@ if os.getcwd() == '/app':
     import dj_database_url
 
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://')
+        # 'default': dj_database_url.config(default='postgres://')
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'mydatabase',
+            'USER': 'mydatabaseuser',
+            'PASSWORD': 'mypassword',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
     }
-    # DATABASES['default'] = dj_database_url.config()
-    # DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-    # DATABASES['default']['NAME'] = 'elreact_geo'
-    # DATABASES['default']['HOST'] = 'localhost'
-    # DATABASES = {
-    #     'default': dj_database_url.config(default='postgis://localhost')
-    # }
-    # DATABASES['default'] =  dj_database_url.config()
-    # DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-    # DATABASES['default']['NAME'] = 'elreactgis'
-    # DATABASES['default']['HOST'] = 'localhost'
 
     # GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
