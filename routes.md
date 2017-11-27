@@ -63,6 +63,7 @@
         * ?path=true: list all events near from path of current user
         * ?current=true&lat=26.9119415283203&long=12.46100258450666: list all events near specific latitude and longitude
         * ?tags=true&tag=exercicio&tag=spinning: list all events by a list of tags
+        * ?owner=1: list all events by an owner
     * POST: create a new event
 
 ```json
@@ -381,7 +382,7 @@
 ##### login/
 
 * HTTP methods: POST
-  * POST: send a username and password and get success ou fail message.
+  * POST: send a username and password and get success ou fail message and the user logged (any kind of user).
 
 ```json
 {
@@ -389,3 +390,10 @@
     "password": "acesso123"
 }
 
+##### logout/
+
+* HTTP methods: POST
+  * POST: just call a logout url and django will rely on that.
+
+```json
+NO JSON REQUIRED.
